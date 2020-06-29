@@ -1,0 +1,121 @@
+
+{% load staticfiles %}
+
+{#{% extends 'polls/base.html' %}#}
+{% include "polls/includes/header.html" %}
+{#{% include 'polls/base.html' %}#}
+
+<br/><br/><br/><br/>
+
+{#{% block title %} Project {% endblock %}#}
+{#{% block content %}#}
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0">
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'polls/css/table.css' %}">
+{#        <link rel="stylesheet" type="text/css" href="{% static 'polls/css/navbar.css' %}">#}
+{#        <link rel="stylesheet" type="text/css" href="{% static 'polls/css/base.css' %}">#}
+{#        <link rel="stylesheet" type="text/css" href="{% static 'polls/css/bootstrap.css' %}">#}
+{#        <link rel="stylesheet" type="text/css" href="{% static 'polls/css/bootstrap-reboot.css' %}">#}
+
+        <script src="{% static 'polls/js/about.js' %}"></script>
+        <script src="{% static 'polls/js/jquery-3.3.1.min.js' %}"></script>
+        <script src="{% static 'polls/js/bootstrap.js' %}"></script>
+        <script src="{% static 'polls/js/ajaxcheck.js' %}"></script>
+        <script >
+            var cur_url = window.location.href;
+            var parts=cur_url.split('/');
+
+            var lastSegment = parts.pop() || parts.pop();  // handle potential trailing slash
+            var new_url = cur_url.substring(0,cur_url.lastIndexOf('polls/'))+"polls/download/"+lastSegment;
+            {#alert(new_url);#}
+        </script>
+        {#Title Here!!#}
+        <title>{% block title %}Project {% endblock %}</title>
+
+    </head>
+    <body>
+    <div class="chosen-container-active">
+        <p class="h1 text-center border">当前算法:{{ tableName }}</p>
+    </div>
+    <br/>
+
+    <div class="container">
+       <div class="row" style = "margin-top:30px">
+             <div class="col-md-4"></div>
+             <div class="col-md-4" style="margin:0 auto;">
+                <form method="post" action="">
+                    {% csrf_token %}
+
+                    {% for hidden_field in form.hidden_fields %}
+                    {{ hidden_field }}
+                    {% endfor %}
+
+{#                    {% for field in form.visible_fields %}#}
+{#                        <div class="form-group">#}
+{#                            {{ field.label_tag }}#}
+{#                            {{ field }}#}
+{##}
+{#                            {% if field.help_text %}#}
+{#                            <small class="form-text text-muted">{{ field.help_text }}</small>#}
+{#                            {% endif %}#}
+{#                        </div>#}
+{#                    {% endfor %}#}
+                    <div class="fieldWrapper">
+{#                       {{ form.subject.errors }}#}
+{#                       <label for="{{ form.subject.id_for_label }}">Email subject:</label>#}
+                        <span>1. 是否删除数据中具有缺失值的行: </span>{{ form.drop_missing }}
+                     </div>
+                     <br>
+
+                     <div class="fieldWrapper">
+{#                       {{ form.subject.errors }}#}
+{#                       <label for="{{ form.subject.id_for_label }}">Email subject:</label>#}
+                        <span>2. 是否对非数字列映射为数字: </span>{{ form.char_to_digit }}
+                     </div>
+                     <br>
+                     <div class="fieldWrapper">
+{#                       {{ form.subject.errors }}#}
+{#                       <label for="{{ form.subject.id_for_label }}">Email subject:</label>#}
+                        <span>3. 数据集选择: </span>{{ form.method_selection }}
+                     </div>
+                     <br>
+
+
+                    <button type="submit" class="btn btn-primary">提交</button>
+                </form>
+             </div>
+{#            <div>#}
+{#                <h3>算法描述:</h3>#}
+{#                <em>分类: Classifying data according to its label</em>#}
+{#                <br>#}
+{#                <em>聚类:Classifying data according to its own characteristic.</em>#}
+{#                <br>#}
+{#                <em>关联规则:Inferring rules of items  </em>#}
+{#                <br>#}
+{#            </div>#}
+       </div>
+
+    </div>
+
+
+
+
+
+
+    <div class="container-fluid">
+        {% autoescape off %}
+             {{ table }}
+        {% endautoescape %}
+    </div>
+    </body>
+</html>
+{#{% include "polls/includes/footer.html" %}#}
+
+{#{% endblock %}#}
+{#{% static 'polls/js/bodypadding.js' %}#}
+<script src="{% static 'polls/js/jquery.min.js' %}"></script>
+<script src="{% static 'polls/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'polls/js/respond.min.js' %}"></script>
+<script src="{% static 'polls/js/bodypadding.js' %}"></script>

@@ -1,0 +1,49 @@
+{% load staticfiles %}
+{% include "polls/includes/header.html" %}
+
+
+
+<!-- Banner -->
+<style>
+      #banner{
+        background-image:url("{% static 'polls/images/b4.jpg' %}");
+    }
+</style>
+
+
+<div id="banner"  >
+    <div class="container"   >
+        <div class="copy" >
+            <h1>F-Lab 数据挖掘平台</h1><br/>
+        </div>
+    </div>
+</div><!-- End Banner -->
+
+<div class="container">
+    <div class="row">
+        <div class=" col-md-8 ">
+    <hr/>
+
+             <p style="text-indent: 20px;" class="articles">
+            <div style ="margin-left:20px;">
+                <h3><strong>平台简介:</strong></h3>
+                <h4><strong>分类: 对数据集根据标签对其进行分类</strong></h4>
+
+                <h4><strong>聚类: 对数据集根据它们自己的特征进行分类</strong></h4>
+                <h4><strong>关联规则: 推断物体之间的关系</strong></h4>
+            </div>
+             </p>
+
+
+
+
+
+      </div>
+
+   {% include "polls/includes/side.html" %}
+
+    </div>
+</div> <!-- class="container" -->
+
+{% include "polls/includes/footer.html" %}
+

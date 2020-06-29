@@ -1,0 +1,176 @@
+{% load staticfiles %}
+<div class="col-xs-12 col-sm-6 col-md-4 " id="sidebar" style="word-break: keep-all;font-family:'Times New Roman', Times, serif;">
+<aside>
+
+
+
+<section class="well well-sm">
+
+ <div align="center">
+<li class="list-group-item"><h4 class="titles"><i class="fa fa-file-pdf-o" style="font-size:24px"></i><span class="icon-label">相关文档</span></h4>
+      <ul class="list-group" id="links">
+
+        <li class="list-group-item">
+{#            <embed src="{% static 'polls/pdf/../决策树算法.pdf' %}" width="850" height="600">#}
+            <a href="{% static 'polls/pdf/KNN算法.pdf' %}" target="_blank">KNN算法
+            </a>
+{#            <a href="https://www.sciencedirect.com/science/article/abs/pii/S0096300306006217" target="_blank">#}
+{#                 A new variable step size algorithm for Cauchy problem#}
+{#            </a>#}
+
+        </li>
+        <li class="list-group-item">
+{#            <embed src="{% static 'polls/pdf/../决策树算法.pdf' %}" width="850" height="600">#}
+            <a href="{% static 'polls/pdf/DC.pdf' %}" target="_blank">决策树算法
+            </a>
+{#            <a href="https://www.sciencedirect.com/science/article/abs/pii/S0096300306006217" target="_blank">#}
+{#                 A new variable step size algorithm for Cauchy problem#}
+{#            </a>#}
+
+        </li>
+
+        <li class="list-group-item">
+            <a href="{% static 'polls/pdf/逻辑回归算法.pdf' %}" target="_blank">
+                 逻辑回归算法
+            </a>
+        </li>
+
+
+         <li class="list-group-item">
+            <a href="{% static 'polls/pdf/朴素贝叶斯算法.pdf' %}" target="_blank">
+                朴素贝叶斯算法
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="{% static 'polls/pdf/随机森林分类算法.pdf' %}" target="_blank">
+                随机森林分类算法
+            </a>
+        </li>
+          <li class="list-group-item">
+            <a href="{% static 'polls/pdf/SVM算法.pdf' %}" target="_blank">
+                SVM算法
+            </a>
+        </li>
+           <li class="list-group-item">
+            <a href="{% static 'polls/pdf/MLP算法.pdf' %}" target="_blank">
+                MLP算法
+            </a>
+        </li>
+
+
+          <li class="list-group-item">
+            <a href="{% static 'polls/pdf/spectralclustering.pdf' %}" target="_blank">
+                 spectralclustering
+            </a>
+        </li>
+          <li class="list-group-item">
+            <a href="{% static 'polls/pdf/minibatchkmeans.pdf' %}" target="_blank">
+                 minibatchkmeans
+            </a>
+        </li>
+          <li class="list-group-item">
+            <a href="{% static 'polls/pdf/meanshift.pdf' %}" target="_blank">
+                 meanshift
+            </a>
+        </li>
+          <li class="list-group-item">
+            <a href="{% static 'polls/pdf/Kmeans.pdf' %}" target="_blank">
+                 Kmeans
+            </a>
+        </li>
+          <li class="list-group-item">
+            <a href="{% static 'polls/pdf/dbscan.pdf' %}" target="_blank">
+                 dbscan
+            </a>
+        </li>
+          <li class="list-group-item">
+            <a href="{% static 'polls/pdf/birch.pdf' %}" target="_blank">
+                 birch
+            </a>
+        </li>
+          <li class="list-group-item">
+            <a href="{% static 'polls/pdf/Apriori.pdf' %}" target="_blank">
+                 Apriori
+            </a>
+        </li>
+
+
+
+
+
+        </ul>
+</li>
+
+{#   {% for  name, category in  iletisims %}#}
+{#            <li class="list-group-item">#}
+{#            <h4 class="titles"><i class="fa fa-tags fa-lg"></i><span class="icon-label">{{ name }}</span></h4>#}
+{#                <ul class="list-group"  >#}
+{#                 {% for title, summary in category %}#}
+{#                    <li class="list-group-item">#}
+{#                            {{ title }}<br/>#}
+{#                            {{summary }}#}
+{#                    </li>#}
+{#                    {% endfor %}#}
+{#                </ul>#}
+{#            </li>#}
+{#         {% endfor %}#}
+{##}
+{##}
+{#   </li>{% for  name, category in  methods %}#}
+{#            <li class="list-group-item">#}
+{#            <h4 class="titles"><i class="fa fa-tags fa-lg"></i><span class="icon-label">{{ name }}</span></h4>#}
+{#                <ul class="list-group" id="articles" >#}
+{#                 {% for  href, title, summary in category %}#}
+{#                    <li class="list-group-item">#}
+{#                        <a href="http://127.0.0.1:8000/{{ href }}/">#}
+{#                            {{ title }}#}
+{#                        </a>#}
+{#                    </li>#}
+{#                    {% endfor %}#}
+{#                </ul>#}
+{#            </li>#}
+{#         {% endfor %}#}
+{##}
+{##}
+{#    <li class="list-group-item"><h4 class="titles"><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>#}
+{#      <ul class="list-group" id="links">#}
+{#        <li class="list-group-item">#}
+{#            <a href="https://www.djangoproject.com/" target="_blank">#}
+{#                Django#}
+{#            </a>#}
+{#        </li>#}
+{##}
+{#        <li class="list-group-item">#}
+{#            <a href="http://python.org/" target="_blank">#}
+{#                Python#}
+{#            </a>#}
+{#        </li>#}
+{##}
+{#        <li class="list-group-item">#}
+{#            <a href="http://matplotlib.org/" target="_blank">#}
+{#                Matplotlib#}
+{#            </a>#}
+{#        </li>#}
+{##}
+{#        <li class="list-group-item">#}
+{#            <a href="http://www.numpy.org/" target="_blank">#}
+{#                NumPy#}
+{#            </a>#}
+{#        </li>#}
+{#           <li class="list-group-item">#}
+{#            <a href="https://www.scipy.org/" target="_blank">#}
+{#                SciPy#}
+{#            </a>#}
+{#        </li>#}
+{##}
+{#      </ul>#}
+{#    </li>#}
+{##}
+{##}
+{#      </ul>#}
+{#    </li>#}
+{#    </ul>#}
+    </div>
+</section>
+</aside>
+</div>

@@ -1,0 +1,81 @@
+{% load static %}
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0">
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'polls/css/table.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'polls/css/navbar.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'polls/css/base.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'polls/css/bootstrap.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'polls/css/bootstrap-reboot.css' %}">
+
+        <script src="{% static 'polls/js/about.js' %}"></script>
+        <script src="{% static 'polls/js/jquery-3.3.1.min.js' %}"></script>
+        <script src="{% static 'polls/js/bootstrap.js' %}"></script>
+        <script src="{% static 'polls/js/ajaxcheck.js' %}"></script>
+        <script >
+            var cur_url = window.location.href;
+            var parts=cur_url.split('/');
+
+            var lastSegment = parts.pop() || parts.pop();  // handle potential trailing slash
+            var new_url = cur_url.substring(0,cur_url.lastIndexOf('polls/'))+"polls/download/"+lastSegment;
+            {#alert(new_url);#}
+        </script>
+        {#Title Here!!#}
+        <title>{% block title %}Project {% endblock %}</title>
+
+    </head>
+    <body>
+    {#  top level nav bar #}
+
+
+{#        <nav class="navbar navbar-expand-lg navbar-light bg-light">#}
+{#             <div class="navbar-collapse collapse w-100" id="collapsingNavbar3">#}
+{##}
+{#                   <ul class="navbar-nav mr-auto">#}
+{#                       <li class="nav-item active"><a href="{% url 'polls:home' %}" class="nav-link">Home<span class="sr-only">(current)</span></a></li>#}
+{#                        <li class="nav-item"><a class="nav-link" href="{% url 'polls:about' %}">About</a></li>#}
+{#                       <li class="nav-item"><a class="nav-link" href="{% url 'polls:index1' %}">index1</a></li>#}
+{##}
+{#                   </ul>#}
+{#                   right algined#}
+{##}
+{#                 <ul class="nav navbar-nav ml-auto w-100 justify-content-end">#}
+{#                      <li class="nav-item active">#}
+{#                       <a href="/polls/upload">上传数据集</a>#}
+{#                  </li>#}
+{#                 </ul>#}
+{#                 <ul class="nav navbar-nav ml-auto w-100 justify-content-end">#}
+{#                      <li class="nav-item active">#}
+{##}
+{#                       <a href="/polls/download/">DownloadCSV</a>#}
+{#                      </li>#}
+{#                </ul>#}
+{#                   <ul class="nav navbar-nav ml-auto w-100 justify-content-end">#}
+{#                      <li class="nav-item active">#}
+{#                          <input class="btn btn-danger navbar-btn" type="button" value="download" onclick="window.location.replace(new_url)"/>#}
+{#                      </li>#}
+{#                      <li class="nav-item mx-2">#}
+{#                          <button  class="btn btn-danger navbar-b" type="button" onclick="window.history.go(-1);window.location.reload()">Go Back</button>#}
+{#                      </li>#}
+{#                </ul>#}
+{#                  <ul class="nav navbar-nav ml-auto w-100 justify-content-end">#}
+{#                      <li class="nav-item active">#}
+{#                          <input class="btn btn-danger navbar-btn" type="button" value="refresh" onclick="window.location.reload()"/>#}
+{#                      </li>#}
+{#                      <li class="nav-item mx-2">#}
+{#                          <button  class="btn btn-danger navbar-b" type="button" onclick="window.history.go(-1);window.location.reload()">Go Back</button>#}
+{#                      </li>#}
+{#                </ul>#}
+{#             </div>#}
+{#        </nav>#}
+        {#Top_level Nav_bar here!#}
+
+
+        {#Content Here!#}
+        {% block content %}{% endblock %}
+
+         {% block extra_js %}{% endblock extra_js %}
+    </body>
+</html>

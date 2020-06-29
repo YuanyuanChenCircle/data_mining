@@ -1,0 +1,82 @@
+{#{% extends 'polls/base.html' %}#}
+{#{% block title %} Classification {% endblock %}#}
+{#{% block content %}#}
+
+{% load staticfiles %}
+
+{#{% extends 'polls/base.html' %}#}
+{% include "polls/includes/header.html" %}
+{#{% include 'polls/base.html' %}#}
+
+<br/><br/><br/><br/>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0">
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'polls/css/table.css' %}">
+{#        <link rel="stylesheet" type="text/css" href="{% static 'polls/css/navbar.css' %}">#}
+{#        <link rel="stylesheet" type="text/css" href="{% static 'polls/css/base.css' %}">#}
+{#        <link rel="stylesheet" type="text/css" href="{% static 'polls/css/bootstrap.css' %}">#}
+{#        <link rel="stylesheet" type="text/css" href="{% static 'polls/css/bootstrap-reboot.css' %}">#}
+
+        <script src="{% static 'polls/js/about.js' %}"></script>
+        <script src="{% static 'polls/js/jquery-3.3.1.min.js' %}"></script>
+        <script src="{% static 'polls/js/bootstrap.js' %}"></script>
+        <script src="{% static 'polls/js/ajaxcheck.js' %}"></script>
+        <script >
+            var cur_url = window.location.href;
+            var parts=cur_url.split('/');
+
+            var lastSegment = parts.pop() || parts.pop();  // handle potential trailing slash
+            var new_url = cur_url.substring(0,cur_url.lastIndexOf('polls/'))+"polls/download/"+lastSegment;
+            {#alert(new_url);#}
+        </script>
+        {#Title Here!!#}
+        <title>{% block title %}Project {% endblock %}</title>
+
+    </head>
+    <body>
+    <div class="chosen-container-active">
+        <p class="h1 text-center border">{{ tableName }}</p>
+    </div>
+
+    <div class="container">
+        <table class="table table-green text-center">
+            {% for key,value in stat.items %}
+           <tbody>
+            <tr>
+                <td>
+                    {{ key }}
+                </td>
+                <td>
+                    {{ value }}
+                </td>
+            </tr>
+           </tbody>
+            {% endfor %}
+        </table>
+        <p style="color:white;"><button type="button" class="btn btn-danger navbar-btn"><a style="color:white; text-decoration: none;"href = "{% url 'polls:cf_data_view' %}">可视化结果</a></button></p>
+    </div>
+
+
+    <div class="container-fluid">
+        {% autoescape off %}
+             {{ table }}
+        {% endautoescape %}
+    </div>
+    </body>
+</html>
+
+
+
+{#{% endblock %}#}
+
+{#{% block extra_js %}#}
+<script type="text/javascript">
+    {# Initial here#}
+    class_description_text("LogisticRegression");
+     {#$("#classification_parameter_description span").append("first method");#}
+    init_classification_parameters("LogisticRegression");
+</script>
+{#{% endblock %}#}

@@ -1,0 +1,163 @@
+{% extends 'polls/base.html' %}
+
+{% block css %}
+    <style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    body{
+        font-family: Verdana, Arial, Helvetica,sans-serif;
+        font-size: 12px;
+        color: #222222;
+    }
+    .menu{
+        width: 800px;
+        margin: 20px auto;
+    }
+    .menu ul{
+        width: 800px;
+        margin: 0 auto;
+        list-style: none;
+        padding: 0px;
+    }
+    .menu ul:after{
+        content: "";
+        height: 0;
+        visibility: hidden;
+        clear: both;
+        display:block ;
+    }
+    .menu ul li{
+        width: 120px;
+        text-align: center;
+        float: left;
+        margin-right: 20px;
+        border: 1px solid #eeeeee;
+        background-color: #eeeeee;
+        height: 30px;
+       line-height: 30px;
+    }
+    .menu ul li a{
+        display: block;
+        text-decoration: none;
+        color: #222222;
+        height: 30px;
+        border-bottom: 1px solid #FF8C00;
+    }
+    .menu ul li a:hover{
+        background-color: #ff6666;
+        color: #000;
+    }
+    .menu ul li ul li{
+        float: none;
+        width: 119px;
+        margin: 0px;
+        border-bottom: 1px solid #FF8C00;
+    }
+    .menu ul li ul li a{
+        text-decoration: none;
+        display: block;
+        background-color: #eeeeee;
+    }
+    .menu ul li ul li a:hover{
+        background-color: #ff6666;
+    }
+    .menu ul li:hover ul{
+        display: block;
+    }
+    .menu ul li ul{
+        display: none;
+    }
+
+</style>
+
+{% endblock %}
+{% block content %}
+    {#Base EXCEL NAV HERE#}
+
+    <ul class="sub_nav_bar">
+{#        <li class="nav_content"><a href="/polls/table/1_3cweka">1-column_3C_weka</a></li>#}
+{##}
+{#        <li class="nav_content"><a href="/polls/table/2_chinese_stock">2-chinese-stock</a></li>#}
+{#        <li class="nav_content"><a href="/polls/table/3_license_plate">3-Shanghai license plate price</a></li>#}
+{#        <li class="nav_content"><a href="/polls/table/4_hapiness">4-happiness2017</a></li>#}
+{##}
+{#        <li class="nav_content"><a href="/polls/table/5_iris">5-iris</a></li>#}
+{#        <li class="nav_content"><a href="/polls/table/5_iris">Classified data set</a></li>#}
+        <li class="nav_content"><a href = "{% url 'polls:labeled' %}">分类</a></li>
+
+        <li class="nav_content"><a href="{% url 'polls:unlabeled' %}">聚类</a></li>
+
+
+
+    <div>
+        <div class="menu">
+            <ul>
+                <li>
+                    <a href="#">JavaScript</a>
+                    <ul>
+                        <li><a href="http://www.runoob.com/js/js-tutorial.html" target="_blank">JavaScript</a></li>
+                        <li><a href="http://www.runoob.com/vue2/vue-tutorial.html">Vue.js</a></li>
+                        <li><a href="http://www.runoob.com/react/react-tutorial.html">React</a></li>
+                        <li><a href="http://www.runoob.com/nodejs/nodejs-tutorial.html">node.js</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">服务端</a>
+                    <ul>
+                        <li><a href="http://www.runoob.com/php/php-tutorial.html">PHP</a></li>
+                        <li><a href="http://www.runoob.com/python/python-tutorial.html">Python </a></li>
+                        <li><a href="http://www.runoob.com/java/java-tutorial.html">Java</a></li>
+                        <li><a href="http://www.runoob.com/cprogramming/c-tutorial.html">C</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">移动端</a>
+                    <ul>
+                        <li><a href="http://www.runoob.com/w3cnote/android-tutorial-intro.html">Android</a></li>
+                        <li><a href="http://www.runoob.com/swift/swift-tutorial.html">Swift </a></li>
+                        <li><a href="http://www.runoob.com/kotlin/kotlin-tutorial.html">Kotlin</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">数据库</a>
+                    <ul>
+                        <li><a href="http://www.runoob.com/sql/sql-tutorial.html">SQL </a></li>
+                        <li><a href="http://www.runoob.com/mysql/mysql-tutorial.html">MySQL </a></li>
+                        <li><a href="http://www.runoob.com/sqlite/sqlite-tutorial.html">SQLite </a></li>
+                        <li><a href="http://www.runoob.com/mongodb/mongodb-tutorial.html">MongoDB </a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">HTML/CSS</a>
+                    <ul>
+                        <li><a href="http://www.runoob.com/xml/xml-tutorial.html">XML </a></li>
+                        <li><a href="http://www.runoob.com/dtd/dtd-tutorial.html">DTD </a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+
+
+
+
+
+{#        <li class="nav_content"><a href="/polls/upload">UploadCSV</a></li>#}
+
+    </ul>
+    {% autoescape off %}
+
+{#        <h1 class="text-center font-weight-bold">F-lab data mining platform</h1>#}
+        <div class="container">
+
+            <h1 class="text-center font-weight-bold" style="margin-top:70px;">F-lab Data Mining Platform</h1>
+
+{#            <h3>F-lab data mining platform</h3>#}
+        </div>
+    {% endautoescape %}
+
+{% endblock %}

@@ -1,0 +1,53 @@
+{#{% extends 'polls/base.html' %}#}
+{% load staticfiles %}
+
+{#{% extends 'polls/base.html' %}#}
+{% include "polls/includes/header.html" %}
+{#{% include 'polls/base.html' %}#}
+
+<br/><br/><br/><br/>
+
+
+{#{% block content %}#}
+    {#Base EXCEL NAV HERE#}
+
+{#    <ul class="sub_nav_bar">#}
+{#        <li class="nav_content"><a href="/polls/table/cweka">1-column_3C_weka</a></li>#}
+{#        <li class="nav_content"><a href="/polls/table/chinese_stock">2-chinese-stock</a></li>#}
+{#        <li class="nav_content"><a href="/polls/table/license_plate">3-Shanghai license plate price</a></li>#}
+{#        <li class="nav_content"><a href="/polls/table/hapiness">4-happiness2017</a></li>#}
+{#        <li class="nav_content"><a href="/polls/table/iris">5-iris</a></li>#}
+{##}
+{#    </ul>#}
+    {% autoescape off %}
+        <div class="container">
+        <div class="col-md-2">请选择需要上传的文件:</div>
+        <div class="col-md-6" style="padding-bottom:20px;">
+            <form method="post" enctype="multipart/form-data">
+                <div class="col-md-7">
+                {% csrf_token %}
+                 {{ form }}
+                </div>
+                <div class="col-md-2">
+                <button type="submit">上传</button>
+                </div>
+            </form>
+
+        </div>
+        {% if messages %}
+        <ul class="messages font-weight-bold" style="margin-top:10px;">
+            {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %} style="margin-top:20px;">{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        </div>
+
+    {% endautoescape %}
+
+{#{% endblock %}#}
+
+<script src="{% static 'polls/js/jquery.min.js' %}"></script>
+<script src="{% static 'polls/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'polls/js/respond.min.js' %}"></script>
+<script src="{% static 'polls/js/bodypadding.js' %}"></script>

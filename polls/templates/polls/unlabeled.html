@@ -1,0 +1,100 @@
+{% extends 'polls/base.html' %}
+
+{% block content %}
+    {#Base EXCEL NAV HERE#}
+
+
+    <ul class="sub_nav_bar">
+{#        <li class="nav_content"><a href="/polls/table/1_3cweka">1-column_3C_weka</a></li>#}
+{##}
+{#        <li class="nav_content"><a href="/polls/table/2_chinese_stock">2-chinese-stock</a></li>#}
+{#        <li class="nav_content"><a href="/polls/table/3_license_plate">3-Shanghai license plate price</a></li>#}
+{#        <li class="nav_content"><a href="/polls/table/4_hapiness">4-happiness2017</a></li>#}
+{##}
+{#        <li class="nav_content"><a href="/polls/table/5_iris">5-iris</a></li>#}
+{#        <li class="nav_content"><a href="/polls/table/5_iris">Classified data set</a></li>#}
+        <li class="nav_content"><a href = "{% url 'polls:labeled' %}">Labeled dataset</a></li>
+
+        <li class="nav_content"><a href="{% url 'polls:unlabeled' %}">Unlabeled dataset</a></li>
+
+
+
+
+
+
+{#        <li class="nav_content"><a href="/polls/upload">UploadCSV</a></li>#}
+
+    </ul>
+
+
+    {% autoescape off %}
+
+
+        <div class="list-group" style="width:700px;margin:0 auto;margin-top:30px;">
+        <div class="list-group-item list-group-item-info">
+        <a class="list-group-item list-group-item-info" style ="display:block;float:left;border:0px;" href="/polls/table/2_chinese_stock">2_chinese_stock</a>
+        <a class="list-group-item list-group-item-info" style ="display:block;float:right;border:0px;" href="/polls/table/2_chinese_stock">Data Set Information</a>
+        </div>
+        <div class="list-group-item list-group-item-info">
+        <a class="list-group-item list-group-item-info" style ="display:block;float:left;border:0px;" href="/polls/table/3_license_plate">3_license_plate</a>
+        <a class="list-group-item list-group-item-info" style ="display:block;float:right;border:0px;" href="{% url 'polls:iris_data_set' %}">Data Set Information</a>
+        </div>
+
+        <div class="list-group-item list-group-item-info">
+        <a class="list-group-item list-group-item-info" style ="display:block;float:left;border:0px;" href="/polls/table/4_hapiness">4_hapiness</a>
+        <a class="list-group-item list-group-item-info" style ="display:block;float:right;border:0px;" href="{% url 'polls:iris_data_set' %}">Data Set Information</a>
+        </div>
+
+        <div class="list-group-item list-group-item-info">
+        <a class="list-group-item list-group-item-info" style ="display:block;float:left;border:0px;" href="/polls/table/filtered_retail">filtered_retail</a>
+        <a class="list-group-item list-group-item-info" style ="display:block;float:right;border:0px;" href="{% url 'polls:iris_data_set' %}">Data Set Information</a>
+        </div>
+
+
+        <div class="list-group-item list-group-item-info">
+        <a class="list-group-item list-group-item-info" style ="display:block;float:left;border:0px;" href="/polls/table/AP_1">filtered_retail</a>
+        <a class="list-group-item list-group-item-info" style ="display:block;float:right;border:0px;" href="{% url 'polls:iris_data_set' %}">Data Set Information</a>
+        </div>
+
+        <div class="list-group-item list-group-item-info">
+        <a class="list-group-item list-group-item-info" style ="display:block;float:left;border:0px;" href="/polls/table/mush">mushroom(association rule dataset)</a>
+        <a class="list-group-item list-group-item-info" style ="display:block;float:right;border:0px;" href="{% url 'polls:iris_data_set' %}">Data Set Information</a>
+        </div>
+
+
+
+
+
+
+
+
+{#        <li class="nav_content"><a href="/polls/upload">UploadCSV</a></li>#}
+
+    <div/>
+
+
+
+
+{#        <ul class="sub_nav_bar">#}
+{#        <li class="nav_content"><a href="/polls/table/1_3cweka">1-column_3C_weka</a></li>#}
+{##}
+{#        <li class="nav_content"><a href="/polls/table/2_chinese_stock">2-chinese-stock</a></li>#}
+{#        <li class="nav_content"><a href="/polls/table/3_license_plate">3-Shanghai license plate price</a></li>#}
+{#        <li class="nav_content"><a href="/polls/table/4_hapiness">4-happiness2017</a></li>#}
+{##}
+{#        <li class="nav_content"><a href="/polls/table/5_iris">5-iris</a></li>#}
+{#        <li class="nav_content"><a href = "{% url 'polls:data_view' %}">Cluster data set</a></li>#}
+{##}
+{##}
+{##}
+{#        <li class="nav_content"><a href="/polls/upload">UploadCSV</a></li>#}
+{##}
+{#    </ul>#}
+
+        <div class="container">
+
+
+        </div>
+    {% endautoescape %}
+
+{% endblock %}

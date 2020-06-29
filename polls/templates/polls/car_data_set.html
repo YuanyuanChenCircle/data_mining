@@ -1,0 +1,94 @@
+{% extends 'polls/base.html' %}
+
+{% block content %}
+    {#Base EXCEL NAV HERE#}
+
+    <ul class="sub_nav_bar">
+{#        <li class="nav_content"><a href="/polls/table/1_3cweka">1-column_3C_weka</a></li>#}
+{##}
+{#        <li class="nav_content"><a href="/polls/table/2_chinese_stock">2-chinese-stock</a></li>#}
+{#        <li class="nav_content"><a href="/polls/table/3_license_plate">3-Shanghai license plate price</a></li>#}
+{#        <li class="nav_content"><a href="/polls/table/4_hapiness">4-happiness2017</a></li>#}
+{##}
+{#        <li class="nav_content"><a href="/polls/table/5_iris">5-iris</a></li>#}
+{#        <li class="nav_content"><a href="/polls/table/5_iris">Classified data set</a></li>#}
+        <li class="nav_content"><a href = "{% url 'polls:labeled' %}">Labeled dataset</a></li>
+
+        <li class="nav_content"><a href="/polls/table/5_iris">Unlabeled dataset</a></li>
+
+
+
+
+
+{#        <li class="nav_content"><a href="/polls/upload">UploadCSV</a></li>#}
+
+    </ul>
+
+
+        <div class="panel panel-default" style="margin:0 auto;width:800px;padding-top:30px;" >
+
+
+        <div class="panel-body">
+            <a  class="btn btn-danger navbar-btn" href="http://archive.ics.uci.edu/ml/machine-learning-databases/car/" download="iris.csv">Data Download</a>
+                <p><h4>Source:</h4>
+
+Creator:<br>
+
+Marko Bohanec<br>
+
+Donor:<br>
+
+1. Marko Bohanec (marko.bohanec '@' ijs.si) <br>
+2. Blaz Zupan (blaz.zupan '@' ijs.si)
+
+<br><br>
+
+
+<h4>Data Set Information:</h4>
+
+Car Evaluation Database was derived from a simple hierarchical decision model originally developed for the demonstration of DEX, M. Bohanec, V. Rajkovic: Expert system for decision making. Sistemica 1(1), pp. 145-157, 1990.). The model evaluates cars according to the following concept structure: <br>
+CAR car acceptability <br>
+. PRICE overall price <br>
+. . buying buying price <br>
+. . maint price of the maintenance <br>
+. TECH technical characteristics <br>
+. . COMFORT comfort <br>
+. . . doors number of doors <br>
+. . . persons capacity in terms of persons to carry <br>
+. . . lug_boot the size of luggage boot <br>
+. . safety estimated safety of the car <br>
+Input attributes are printed in lowercase. Besides the target concept (CAR), the model includes three intermediate concepts: PRICE, TECH, COMFORT. Every concept is in the original model related to its lower level descendants by a set of examples (for these examples sets see [Web Link]). <br>
+
+The Car Evaluation Database contains examples with the structural information removed, i.e., directly relates CAR to the six input attributes: buying, maint, doors, persons, lug_boot, safety. <br>
+
+Because of known underlying concept structure, this database may be particularly useful for testing constructive induction and structure discovery methods. <br>
+            <br>
+
+<h4>Attribute Information:</h4>
+
+Class Values:
+<br>
+unacc, acc, good, vgood <br>
+Attributes: <br>
+buying: vhigh, high, med, low. <br>
+maint: vhigh, high, med, low. <br>
+doors: 2, 3, 4, 5more.<br>
+persons: 2, 4, more. <br>
+lug_boot: small, med, big. <br>
+safety: low, med, high. <br>
+
+
+</p>
+  </div>
+
+
+        </div>
+
+
+
+{#        <li class="nav_content"><a href="/polls/upload">UploadCSV</a></li>#}
+
+
+
+
+{% endblock %}

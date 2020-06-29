@@ -1,0 +1,80 @@
+{% extends 'polls/base.html' %}
+
+{% block content %}
+    {#Base EXCEL NAV HERE#}
+
+    <ul class="sub_nav_bar">
+{#        <li class="nav_content"><a href="/polls/table/1_3cweka">1-column_3C_weka</a></li>#}
+{##}
+{#        <li class="nav_content"><a href="/polls/table/2_chinese_stock">2-chinese-stock</a></li>#}
+{#        <li class="nav_content"><a href="/polls/table/3_license_plate">3-Shanghai license plate price</a></li>#}
+{#        <li class="nav_content"><a href="/polls/table/4_hapiness">4-happiness2017</a></li>#}
+{##}
+{#        <li class="nav_content"><a href="/polls/table/5_iris">5-iris</a></li>#}
+{#        <li class="nav_content"><a href="/polls/table/5_iris">Classified data set</a></li>#}
+        <li class="nav_content"><a href = "{% url 'polls:labeled' %}">Labeled dataset</a></li>
+
+        <li class="nav_content"><a href="/polls/table/5_iris">Unlabeled dataset</a></li>
+
+
+
+
+
+{#        <li class="nav_content"><a href="/polls/upload">UploadCSV</a></li>#}
+
+    </ul>
+
+
+        <div class="panel panel-default" style="margin:0 auto;width:800px;padding-top:30px;" >
+
+
+        <div class="panel-body">
+            <a  class="btn btn-danger navbar-btn" href="http://archive.ics.uci.edu/ml/machine-learning-databases/iris/" download="iris.csv">Data Download</a>
+                <p><h4>Source:</h4>
+
+Creator:<br>
+
+R.A. Fisher<br>
+
+Donor:<br>
+
+Michael Marshall (MARSHALL%PLU '@' io.arc.nasa.gov)<br><br>
+
+
+<h4>Data Set Information:</h4>
+
+This is perhaps the best known database to be found in the pattern recognition literature. Fisher's paper is a classic in the field and is referenced frequently to this day. (See Duda & Hart, for example.) The data set contains 3 classes of 50 instances each, where each class refers to a type of iris plant. One class is linearly separable from the other 2; the latter are NOT linearly separable from each other.<br>
+
+Predicted attribute: class of iris plant.<br>
+
+This is an exceedingly simple domain.<br>
+
+This data differs from the data presented in Fishers article (identified by Steve Chadwick, spchadwick '@' espeedaz.net ). The 35th sample should be: 4.9,3.1,1.5,0.2,"Iris-setosa" where the error is in the fourth feature. The 38th sample: 4.9,3.6,1.4,0.1,"Iris-setosa" where the errors are in the second and third features.<br>
+<br>
+
+<h4>Attribute Information:</h4>
+
+1. sepal length in cm<br>
+2. sepal width in cm<br>
+3. petal length in cm<br>
+4. petal width in cm<br>
+5. class:<br>
+-- Iris Setosa<br>
+-- Iris Versicolour<br>
+-- Iris Virginica<br>
+
+
+</p>
+  </div>
+
+
+        </div>
+
+
+
+{#        <li class="nav_content"><a href="/polls/upload">UploadCSV</a></li>#}
+
+
+
+
+{% endblock %}
