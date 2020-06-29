@@ -81,3 +81,11 @@ This project is a online client-server model data-mining application
 - [ ] Parameters for Apriori algorithm
 - [ ] Full documentation for Apriori algorithm
 - [ ] More association rules algorithm
+
+
+
+![image-20200629172604406](/Users/cy/Downloads/DataMiningWebsite-server-2/temp_image/image-20200629172604406.png)
+
+![image-20200629175323199](temp_image/image-20200629175323199.png)
+
+![image-20200629175423272](temp_image/image-20200629175423272.png)
