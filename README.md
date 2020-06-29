@@ -12,31 +12,7 @@ This project is a online client-server model data-mining application
 
 4. You should be able to use this software in `localhost:8080` now
 
-
-### For running on server:
-
-1. cofigure nginx `uwsgi --http :8000 --chdir /root/dataMining/ -w djangoData.wsgi`
-
-2. configure path and allowed host
-
--STATIC_URL = '/static/'
-+STATIC_URL = '/polls/static/'
-+STATIC_ROOT = '/root/dataMining/polls/static/'
-
-# Road Map
-## Version
-- [X] 0.1 CSV preview and nav bars, writing templates for home page and all sub-pages
-- [X] 0.2 Classification tempalte and base logic set up
-- [X] 0.3 Finished Classification 
-- [X] 0.4 Finished documention tempaltes and documents for Classification
-- [X] 0.5 Clustering tempalte and base logic set up 
-- [X] 0.6 Finished Clustering 
-- [X] 0.7 Finished documention for clustering
-- [X] 0.8 Deploy this software to server
-- [X] 0.9 Finished Aporiori based association rules, finished upload and downloading functionalities
-- [X] 1.0 Adding detailed documentation and all functionalities for parameters adjustment
-
-## Functionalities
+# Functionalities
 ### General
 - [X] Show all data uploaded
 - [X] File upload and download
@@ -77,14 +53,23 @@ This project is a online client-server model data-mining application
 - [X] Parameters Adjustment for Classification
 
 ### Association rules
-- [X] Apriori algorithm
+- [x] Apriori algorithm
+
 - [ ] Parameters for Apriori algorithm
+
 - [ ] Full documentation for Apriori algorithm
+
 - [ ] More association rules algorithm
+
+  
 
 ![Alt text](https://github.com/YuanyuanChenCircle/-_/blob/master/temp_image/image-20200629172604406.png)
 
 ![Alt text](https://github.com/YuanyuanChenCircle/-_/blob/master/temp_image/image-20200629175323199.png)
 
 ![Alt text](https://github.com/YuanyuanChenCircle/-_/blob/master/temp_image/image-20200629175423272.png)
+
+**参考一位师兄的毕设，并不是完全自己写的。**
+
+
 
